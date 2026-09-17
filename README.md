@@ -81,3 +81,4 @@ Reglas) usa rutas reales de React Router (`/`, `/calendario`,
 `/equipos`, `/estadisticas`, `/reglas`), así que la app es completamente
 navegable, con el ítem activo resaltado igual que en el diseño
 original.
+# liga-cristiana
