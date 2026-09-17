@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Estilos personalizados originales (glassmorphism-light-ambient) ===== */
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #f6faf7;
+  color: #0b2b1b;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Diffuse soft green organic blur spots / glowing radial mesh gradient patches */
+.ambient-glow-1 {
+  position: absolute;
+  top: -40px;
+  left: 5%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.22) 0%,
+    rgba(52, 211, 153, 0.12) 40%,
+    rgba(246, 250, 247, 0) 70%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.ambient-glow-2 {
+  position: absolute;
+  top: 360px;
+  right: -60px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(
+    circle,
+    rgba(5, 150, 105, 0.18) 0%,
+    rgba(110, 231, 183, 0.15) 45%,
+    rgba(246, 250, 247, 0) 70%
+  );
+  filter: blur(65px);
+  pointer-events: none;
+}
+
+.ambient-glow-3 {
+  position: absolute;
+  bottom: 120px;
+  left: -40px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(
+    circle,
+    rgba(52, 211, 153, 0.2) 0%,
+    rgba(167, 243, 208, 0.12) 50%,
+    rgba(246, 250, 247, 0) 70%
+  );
+  filter: blur(65px);
+  pointer-events: none;
+}
+
+/* Bright frosted glass surfaces */
+.glass-card {
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 12px 30px -8px rgba(11, 43, 27, 0.07),
+    0 4px 10px -2px rgba(16, 185, 129, 0.04),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.glass-card-subtle {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 20px -6px rgba(11, 43, 27, 0.05);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 14px -3px rgba(11, 43, 27, 0.06);
+}
+
+.glass-pill-active {
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #065f46;
+}
+
+/* 3D Ball Shadow filter */
+.ball-3d-shadow {
+  filter: drop-shadow(0 20px 18px rgba(16, 185, 129, 0.22))
+    drop-shadow(0 12px 14px rgba(11, 43, 27, 0.16));
+}
+
+/* Hide scrollbar for category row */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 999px;
+}
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Balón flotante animado */
+@keyframes floatBall {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-7px) rotate(3deg);
+  }
+}
+
+.float-ball {
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: floatBall;
+}
