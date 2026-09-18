@@ -98,11 +98,20 @@ export default function BottomNav() {
       <div
         ref={measureRef}
         aria-hidden="true"
-        className="absolute top-0 left-0 flex items-center py-2 px-3 pointer-events-none"
-        style={{ visibility: "hidden", width: "max-content" }}
+        className="absolute top-0 left-0 flex items-center py-2 pointer-events-none"
+        style={{
+          visibility: "hidden",
+          width: "max-content",
+          paddingLeft: "0.25rem",
+          paddingRight: "0.25rem",
+        }}
       >
         {tabs.map((tab) => (
-          <div key={tab.to} className="flex flex-col items-center py-1 px-3">
+          <div
+            key={tab.to}
+            className="flex flex-col items-center py-1"
+            style={{ paddingLeft: "0.25rem", paddingRight: "0.25rem" }}
+          >
             <div className="p-1">
               <svg
                 className="w-5 h-5 stroke-current"
@@ -123,13 +132,16 @@ export default function BottomNav() {
       {/* Menu real, visible */}
       <nav
         aria-label="Navegación principal"
-        className="glass-card rounded-3xl py-2 px-3 flex items-center justify-around shadow-xl border border-white/90 backdrop-blur-2xl"
+        className="glass-card rounded-3xl py-2 flex items-center justify-around shadow-xl border border-white/90 backdrop-blur-2xl"
         style={{
           background: "rgba(255, 255, 255, 0.72)",
           backdropFilter: "blur(24px)",
           border: "1px solid rgba(255, 255, 255, 0.88)",
           boxShadow:
             "rgba(11, 43, 27, 0.12) 0px 16px 36px -6px, rgba(16, 185, 129, 0.06) 0px 4px 12px, rgba(255, 255, 255, 0.95) 0px 1px 1px inset",
+          paddingLeft: "0.25rem",
+          paddingRight: "0.25rem",
+          borderRadius: showLabels ? undefined : "1rem",
         }}
       >
         {tabs.map((tab) => (
@@ -138,8 +150,13 @@ export default function BottomNav() {
             to={tab.to}
             end={tab.to === "/"}
             className={`flex flex-col items-center group py-1 relative ${
-              showLabels ? "px-3" : "px-1.5"
+              showLabels ? "" : "px-1.5"
             }`}
+            style={
+              showLabels
+                ? { paddingLeft: "0.25rem", paddingRight: "0.25rem" }
+                : undefined
+            }
           >
             {({ isActive }) => (
               <>

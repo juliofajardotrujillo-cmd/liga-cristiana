@@ -15,7 +15,7 @@ export default function MobileShell() {
         {/* Unica zona que hace scroll: todo el contenido de cada
             pantalla se mueve aqui dentro, el fondo de arriba y el
             menu de abajo quedan estaticos. */}
-        <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden relative z-10">
+        <div id="app-scroll" className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden relative z-10">
           {/* Header: se repite en todas las paginas, por eso vive aqui
               en el layout en vez de en cada pagina. */}
           <div

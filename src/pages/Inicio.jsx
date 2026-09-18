@@ -261,7 +261,7 @@ export default function Inicio() {
             </p>
           </div>
           <Link
-            to="/estadisticas"
+            to="/estadisticas#goles-asistencia"
             className="text-xs text-emerald-600 hover:text-emerald-700 flex items-center space-x-1 font-semibold"
           >
             <span>Ver Todo</span>

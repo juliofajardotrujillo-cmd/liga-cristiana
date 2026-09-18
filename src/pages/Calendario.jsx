@@ -31,7 +31,7 @@ function EquipoBadge({ nombre }) {
 function PartidoRow({ partido }) {
   const esFinal = partido.local.includes("Ganador");
   return (
-    <div className="flex items-center justify-between p-2 rounded-xl bg-white/75 border border-white/90 shadow-xs">
+    <div className="flex items-center justify-between p-2 rounded-xl shadow-xs">
       <div className="flex items-center space-x-2 w-[43%] min-w-0">
         <EquipoBadge nombre={partido.local} />
         <span
