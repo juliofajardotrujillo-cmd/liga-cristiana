@@ -1,8 +1,28 @@
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import AmbientGlows from "./AmbientGlows";
 import BottomNav from "./BottomNav";
 
 export default function MobileShell() {
+  const location = useLocation();
+
+  // Cada vez que se cambia de pagina (por cualquier boton de
+  // navegacion), la pagina se abre siempre desde su inicio. La UNICA
+  // excepcion es entrar a Estadisticas desde el boton "Ver Todo" de
+  // Maximos Goleadores en Inicio, que debe abrir directo en la seccion
+  // de Goles y Asistencia.
+  useEffect(() => {
+    const container = document.getElementById("app-scroll");
+    if (!container) return;
+
+    if (location.pathname === "/estadisticas" && location.hash === "#goles-asistencia") {
+      const target = document.getElementById("goles-asistencia");
+      target?.scrollIntoView({ behavior: "auto", block: "start" });
+    } else {
+      container.scrollTop = 0;
+    }
+  }, [location.pathname, location.hash]);
+
   return (
     // Contenedor de viewport: ocupa exactamente el alto/ancho de la
     // pantalla del telefono y NUNCA hace scroll el mismo.

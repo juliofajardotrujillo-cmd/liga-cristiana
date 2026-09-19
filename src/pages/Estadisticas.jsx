@@ -119,6 +119,7 @@ export default function Estadisticas() {
         {/* BEGIN: GoleadoresAsistenciasSection */}
         <section
           aria-labelledby="goleadores-asist-title"
+          id="goles-asistencia"
           className="mb-4"
           style={{ paddingLeft: 20, paddingRight: 20 }}
         >

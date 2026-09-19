@@ -69,7 +69,7 @@ export default function Inicio() {
           </div>
 
           <div className="relative w-[44%] flex flex-col items-center justify-center">
-            <div className="relative z-10 w-36 h-36 flex items-center justify-center -mr-1 transition-transform duration-500 ease-out hover:scale-105">
+            <div className="relative z-10 w-[120px] h-[120px] flex items-center justify-center -mr-1 transition-transform duration-500 ease-out hover:scale-105">
               <img
                 alt="Balón Trionda 2026"
                 className="w-full h-full object-contain relative z-10 ball-3d-shadow drop-shadow-xl select-none pointer-events-none float-ball"
